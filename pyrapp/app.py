@@ -38,7 +38,7 @@ def main():
 
     settings['mako.directories'] = os.path.join(here, 'views')
 
-    settings['mongo_connection'] = pymongo.Connection('mongodb://localhost/')
+#    settings['mongo_connection'] = pymongo.Connection('mongodb://localhost/')
     settings['mongo_db_name'] = 'news33'
 
     settings['session.name'] = 'session'
@@ -51,13 +51,13 @@ def main():
 
     settings['sqlalchemy.url'] = 'postgres://richard:test@localhost/test1'
 
-    db.init(settings)
-    session.init(settings)
+#    db.init(settings)
+#    session.init(settings)
 
     config = Configurator(settings=settings)
 
-    config.add_subscriber('pyrapp.lib.session.on_request', 'pyramid.events.NewRequest')
-    config.add_subscriber('pyrapp.lib.session.on_response', 'pyramid.events.NewResponse')
+#    config.add_subscriber('pyrapp.lib.session.on_request', 'pyramid.events.NewRequest')
+#    config.add_subscriber('pyrapp.lib.session.on_response', 'pyramid.events.NewResponse')
 
     config.include('pyramid_tm')
     # configuration setup
@@ -72,7 +72,7 @@ def main():
     config.add_static_view('css', os.path.join(here, 'css'))
     config.add_static_view('js', os.path.join(here, 'js'))
 
-    config.scan(package='views')
+    config.scan(package='pyrapp.views')
 
     # serve app
     app = config.make_wsgi_app()
