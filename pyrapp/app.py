@@ -38,7 +38,7 @@ def main():
 
     settings['mako.directories'] = os.path.join(here, 'views')
 
-#    settings['mongo_connection'] = pymongo.Connection('mongodb://localhost/')
+    settings['mongo_connection'] = pymongo.Connection('mongodb://localhost/')
     settings['mongo_db_name'] = 'news33'
 
     settings['session.name'] = 'session'
