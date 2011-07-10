@@ -1,2 +1,6 @@
 .idea
 .DS_Store
+env26
+*.pyc
+*.egg-info
+

@@ -32,7 +32,7 @@ session.mongodb_db  MongoDB database
 from datetime import datetime
 import logging
 import pymongo
-from lib.token import create_token, valid_token
+from pyrapp.lib.token import create_token, valid_token
 
 config = {}
 mongodb = None

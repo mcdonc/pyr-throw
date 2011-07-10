@@ -1,5 +1,5 @@
 from datetime import datetime
-import lib.db as db
+import pyrapp.lib.db as db
 
 def add(title, content):
     return db.query('insert into news (dated, title, content) values (:dated, :title, :content) returning id', dated=datetime.now(), title=title, content=content).scalar()

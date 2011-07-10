@@ -16,6 +16,7 @@ import logging
 import pymongo
 import lib.db as db
 import lib.session as session
+import sys
 
 from pyramid.config import Configurator
 
@@ -27,7 +28,7 @@ log = logging.getLogger(__file__)
 here = os.path.dirname(os.path.abspath(__file__))
 
 
-if __name__ == '__main__':
+def main():
     # configuration settings
     settings = dict()
     settings['reload_all'] = True
@@ -77,3 +78,6 @@ if __name__ == '__main__':
     app = config.make_wsgi_app()
     serve(app, host='127.0.0.1')
     
+if __name__ == '__main__':
+    main(sys.argv)
+

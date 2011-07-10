@@ -1,0 +1,26 @@
+1.  Create a virtualenv in your home directory::
+
+     $ virtualenv --no-site-packages ~/pyrenv
+
+2. cd to the newly created virtualenv directory::
+
+     $ cd ~/pyrenv
+
+3. Clone ``pyr-throw`` from GitHub::
+
+     $ git clone git://github.com/mcdonc/pyr-throw.git
+
+4. cd to resulting ``pyr-throw`` directory::
+
+     $ cd pyr-throw
+
+
+5. Use the virtualenv's ``python`` to run the setup.py script with the
+   argument ``develop``.
+
+     $ ../bin/python setup.py develop
+
+6.  cd back up one dir and run the app.
+
+     $ bin/pyrapp
+
