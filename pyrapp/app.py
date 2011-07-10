@@ -38,7 +38,7 @@ def main():
 
     settings['mako.directories'] = os.path.join(here, 'views')
 
-    settings['mongo_connection'] = pymongo.Connection('mongodb://localhost/')
+#    settings['mongo_connection'] = pymongo.Connection('mongodb://localhost/')
     settings['mongo_db_name'] = 'news33'
 
     settings['session.name'] = 'session'
@@ -56,8 +56,8 @@ def main():
 
     config = Configurator(settings=settings)
 
-    config.add_subscriber('lib.session.on_request', 'pyramid.events.NewRequest')
-    config.add_subscriber('lib.session.on_response', 'pyramid.events.NewResponse')
+    config.add_subscriber('pyrapp.lib.session.on_request', 'pyramid.events.NewRequest')
+    config.add_subscriber('pyrapp.lib.session.on_response', 'pyramid.events.NewResponse')
 
     config.include('pyramid_tm')
     # configuration setup
